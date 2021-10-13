@@ -12,6 +12,7 @@ const General = () => {
     return(
         <>
             <Header/>
+            <main/>
             <footer>
                 <p>Copyright</p>
             </footer>

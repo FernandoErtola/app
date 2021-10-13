@@ -1,0 +1,32 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: 100vh;
+}
+
+html , body {
+    height: 100vh;
+}
+
+header{
+    padding: 0.5rem 1rem;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+nav{
+    display: flex;
+}
+
+nav a{
+        padding-right: 20px;
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+}
+
+
+
