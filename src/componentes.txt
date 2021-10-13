@@ -1,0 +1,11 @@
+Los componentes siempre arrancan en mayuscula
+No se puede repetir nombre de componentes
+Los componentes son funciones
+Todos los componentes deben retornar algo
+Los componentes solo retornan una sola cosa
+
+function App () {}
+
+const App = () => {}
+
+class App {}

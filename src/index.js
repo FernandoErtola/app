@@ -1,7 +1,6 @@
 import React from "react" 
-
 import ReactDOM from "react-dom"
 
-const Elemento = () => <p>Hola Mundo del React</p>
+import General from "./app"
 
-ReactDOM.render(<Elemento/> , document.getElementById("root") )
+ReactDOM.render(<General/> , document.getElementById("root") )
