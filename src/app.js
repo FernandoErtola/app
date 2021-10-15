@@ -1,21 +1,13 @@
-/*const General = () => "Hola Mundo del React"*/
-
-/*const General = () => {
-    return (
-        "Hola Mundo de react"
-        )
-}*/
-
 import Header from "./header"
+import Footer from "./footer"
+import Main from "./main"
 
 const General = () => {
     return(
         <>
             <Header/>
-            <main/>
-            <footer>
-                <p>Copyright</p>
-            </footer>
+            <Main/>
+            <Footer/>
         </>
     )
 }

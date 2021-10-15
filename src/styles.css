@@ -8,7 +8,7 @@ html , body {
     height: 100vh;
 }
 
-header{
+.header{
     padding: 0.5rem 1rem;
     background-color: blue;
     display: flex;
@@ -17,16 +17,20 @@ header{
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-nav{
+.navBar{
     display: flex;
 }
 
-nav a{
+.navBar a{
         padding-right: 20px;
         text-decoration: none;
         color: black;
         font-size: 20px;
 }
 
+.main{
+    height: 500px;
+    background-color: grey;
+}
 
 
