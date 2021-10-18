@@ -33,4 +33,17 @@ html , body {
     background-color: grey;
 }
 
+.user{
+    color: white;
+    font-weight: 600;
+    padding-left: 5px;
+    font-size: 20px;
+}
+
+.welcome{
+    font-size: 15px;
+    color: white;
+    font-weight: 600;
+}
+
 

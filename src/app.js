@@ -5,7 +5,11 @@ import Main from "./main"
 const General = () => {
     return(
         <>
-            <Header/>
+            <Header 
+                nombre="Fernando" 
+                apellido="Ertola" 
+                edad={35} 
+            />
             <Main/>
             <Footer/>
         </>

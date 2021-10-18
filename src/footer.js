@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <>
             <footer>
-                <p>Copyright</p>
+                <p>Copyright &copy;</p>
                 <Navbar/>
             </footer>
         </>
