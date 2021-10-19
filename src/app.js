@@ -1,6 +1,7 @@
 import Header from "./header"
 import Footer from "./footer"
-import Main from "./main"
+import ItemListContainer from "./itemListContainer"
+
 
 const General = () => {
     return(
@@ -10,7 +11,7 @@ const General = () => {
                 apellido="Ertola" 
                 edad={35} 
             />
-            <Main/>
+            <ItemListContainer/>
             <Footer/>
         </>
     )

@@ -8,6 +8,7 @@ const Header = ({nombre, apellido, edad}) => {
             <h1>FERTOLA</h1>
             <Navbar/>
             <p className="welcome">Bienvenido <a className="user">{nombre} ({edad})</a></p>
+            <i className="fas fa-shopping-cart cart"></i>
         </header>
     )
 }

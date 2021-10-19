@@ -28,7 +28,7 @@ html , body {
         font-size: 20px;
 }
 
-.main{
+.ilc{
     height: 500px;
     background-color: grey;
 }
@@ -46,4 +46,8 @@ html , body {
     font-weight: 600;
 }
 
+.cart{
+    color: white;
+    font-size: 25px;
+}
 
