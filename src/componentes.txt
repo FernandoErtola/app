@@ -21,3 +21,8 @@ const [uno,dos,tres] = array
 
 
 const obj = {a:1, b:2, c:3}
+
+
+const btn = document.getElementById("btn")
+
+brn.addEventListener("click", foo)
