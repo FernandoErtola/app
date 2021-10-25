@@ -51,3 +51,24 @@ html , body {
     font-size: 25px;
 }
 
+.cardCart{
+    width: 200px;
+    height: 200px;
+    border: grey solid 2px;
+
+}
+
+.cart-title{
+    font-size: 20px;
+    font-weight: 600px;
+}
+
+.button{
+    padding: 0px 30px;
+    margin: 0 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: black;
+    background-color: blue;
+}
+

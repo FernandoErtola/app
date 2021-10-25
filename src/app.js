@@ -1,6 +1,7 @@
 
 import Header from "./header"
 import Footer from "./footer"
+import ItemCount from "./itemCount"
 import ItemListContainer from "./itemListContainer"
 
 
@@ -14,11 +15,13 @@ const App = () => {
                 apellido="Ertola" 
                 edad={35} 
             />
+            <ItemCount />
             <ItemListContainer
                 nombre="Fernando" 
                 apellido="Ertola" 
                 edad={35} 
             />
+            
             <Footer/>
         </>
     )
