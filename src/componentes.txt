@@ -3,6 +3,9 @@ No se puede repetir nombre de componentes
 Los componentes son funciones
 Todos los componentes deben retornar algo
 Los componentes solo retornan una sola cosa
+Pueden recibir props y son de solo lectura
+Pueden tener un estado interno
+Si el esado de un componente o sus props cambien de valor, el componente se vuelve a renderizar
 
 function App () {}
 
@@ -23,6 +26,20 @@ const [uno,dos,tres] = array
 const obj = {a:1, b:2, c:3}
 
 
+/////////////////////////////
+
 const btn = document.getElementById("btn")
 
+const foo = () 
+
 brn.addEventListener("click", foo)
+
+
+STATE: Son varbiales internas de un coomponente que se matnienen a travez de ejecucuon y nos dan reatividad
+
+HOOKS> Son funciones que se ejecturan en un coimponente y le dan una nueva funcionalidad
+
+    Hooks de estado:
+        - useState
+        - useReducer
+        - useRef

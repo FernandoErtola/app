@@ -1,12 +1,16 @@
 import {useState} from "react"
+import ItemList from ItemList.js
+import Productos from "./api.json";
 
-const ItemListContainer = ({nombre, apellido, edad}) => {
+const ItemListContainer = ({id, nombre, precio}) => {
+
+
     
-/*      let contador = 0
- */ 
-/*     const resultado = useState("Hola")
+     let contador = 0
+
+    const resultado = useState("Hola")
     const estado = resultado[0]
-    const setEstado = resultado [1]  */
+    const setEstado = resultado [1]  
     const [saludo,setSaludo] = useState("Bienvenido")
     const [contador, setContador] = useState(0)
 

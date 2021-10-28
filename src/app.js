@@ -32,9 +32,7 @@ const App = () => {
                 apellido="Ertola" 
                 edad={35} 
             />
-            {productos.map(p => {
-                return <ItemCount key={p.id} name={p.name} stock={p.stock} onAdd={onAdd} />  
-            })}
+
             <ItemListContainer
                 nombre="Fernando" 
                 apellido="Ertola" 
