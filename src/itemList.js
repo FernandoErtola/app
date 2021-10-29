@@ -1,9 +1,10 @@
 import ItemDetails from './itemDetails.js'
+import ItemCount from './itemCount.js'
 
-const ItemList = ({productos}) => {
-    {productos.map(p => {
-        return <ItemCount key={p.id} name={p.name} stock={p.stock} initial={0} onAdd={onAdd} />  
-    })}
+const ItemList = ({productos, onAddToCart, onItemSelect}) => {
+    return productos.map(p => {
+        return <ItemCount key={p.id} image={p.image} name={p.name} stock={p.stock} onSelect={() => onItemSelect(p)} onAdd={(quantity) => onAddToCart(quantity, p)} initial={0} />  
+    })
 }
 
 export default ItemList;

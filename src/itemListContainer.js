@@ -1,33 +1,46 @@
-import {useState} from "react"
-import ItemList from ItemList.js
-import Productos from "./api.json";
+import {useEffect, useState} from "react"
+import ItemList from "./itemList"
+import ItemDetails from "./itemDetails"
 
-const ItemListContainer = ({id, nombre, precio}) => {
+const getProductos = () => {
+    return new Promise((resolve, reject) => {
+        fetch('/api.json')
+        .then(res => res.json())
+        .then(data => {
+            setTimeout(() => {resolve(data)}, 2000)
+        })
+    })
+}
 
+const ItemListContainer = () => {
 
-    
-     let contador = 0
+    const [productos, setProductos] = useState([]);
+    const [selectedProducto, setSelectedProducto] = useState(null);
 
-    const resultado = useState("Hola")
-    const estado = resultado[0]
-    const setEstado = resultado [1]  
-    const [saludo,setSaludo] = useState("Bienvenido")
-    const [contador, setContador] = useState(0)
+    useEffect(async () => {
+        setProductos(await getProductos());
+    }, []);
 
-    const Acumula = () => {
-        
-        setContador(contador + 1)
-        
-   }
-   console.log(contador)
-    return(
+    const onAgregarAlCarrito = (quantity, producto) => {
+        console.log(quantity, producto)
+    }
+
+    const onItemSelected = (producto) => {
+        setSelectedProducto(producto);
+    }
+
+    return (
         <>
-        <button onClick={Acumula}>click</button>
-
-        <main className="ilc">
-            <p>{saludo} <a className="user">{nombre} ({edad})</a></p>
-            <p>{contador}</p>
-        </main>
+            <main className="ilc">
+                <div>
+                    <div style={{width: '50%', float: 'left'}}>
+                        <ItemList productos={productos} onAddToCart={onAgregarAlCarrito} onItemSelect={onItemSelected} />
+                    </div>
+                    <div style={{width: '50%', float: 'right'}}>
+                        {selectedProducto && <ItemDetails producto={selectedProducto} />}
+                    </div>
+                </div>
+            </main>
         </>
     )
 }

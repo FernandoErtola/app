@@ -32,12 +32,7 @@ const App = () => {
                 apellido="Ertola" 
                 edad={35} 
             />
-
-            <ItemListContainer
-                nombre="Fernando" 
-                apellido="Ertola" 
-                edad={35} 
-            />
+            <ItemListContainer />
             <Footer/>
         </>
     )

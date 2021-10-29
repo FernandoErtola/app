@@ -1,37 +1,38 @@
 import { useState } from "react"
 
-const ItemCount = () => {
+const ItemCount = ({ initial, name, stock, image, onAdd, onSelect }) => {
 
-const [stock, setStock] = useState({initial})
+    const [count, setCount] = useState(initial)
 
-const Suma = () => {
-    if (stock < 12)    
-    setStock(stock + 1)
-    else return (
-        alert("No hay mas stock disponible")
-    )
-}
+    const Suma = () => {
+        if (count < stock) {
+            setCount(count + 1)
+        } else {
+            alert("No hay mas stock disponible")
+        }
+    }
 
-console.log({stock})
+    const Resta = () => {
+        if (count > 0) {
+            setCount(count - 1)
+        }
+    }
 
-const Resta = () => {   
-    if (stock === 0) 
-        return (false)
-    else return(
-        setStock(stock - 1)
-    )
-}
+    return (
+        <>
+            <div className="cardCart" onClick={onSelect}>
+                <h5 className="cart-title">{name}</h5>
 
-    return(
-            <>
-            <div className="cardCart">
-            <h5 className="cart-title">Comprar producto</h5>
-            <p className="cart-text">Cantidad: {stock}</p>
+                <img className="cart-image" src={image} alt="imagen" />
 
-            <button className="button" onClick={Suma}>+</button>
-            <button className="button" onClick={Resta}>-</button>
-            </div>  
-            </>   
+                <p className="cart-text">Cantidad: {count}</p>
+                <p className="cart-text">Stock: {stock}</p>
+
+                <button className="button" onClick={() => onAdd(count)}>Agregar al carrito</button>
+                <button className="button" onClick={Suma}>+</button>
+                <button className="button" onClick={Resta}>-</button>
+            </div>
+        </>
     )
 }
 
