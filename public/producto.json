@@ -1,0 +1,12 @@
+[
+    {
+      "id": 1,
+      "name": "Remera",
+      "stock":35,
+      "marca": "Armany",
+      "precio": 2500,
+      "descripcion": "Remera blanca clasica",
+      "image": "./img/motosierra.png",
+      "vendido": "0"
+    }
+]
