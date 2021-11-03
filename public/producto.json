@@ -6,7 +6,7 @@
       "marca": "Armany",
       "precio": 2500,
       "descripcion": "Remera blanca clasica",
-      "image": "./img/remera.jpg",
+      "image": "../img/remera.jpg",
       "vendido": "0"
     }
 ]

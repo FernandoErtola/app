@@ -6,7 +6,7 @@
       "marca": "Stihl",
       "precio": 45000,
       "descripcion": "Motosierra a nafta",
-      "image": "./img/motosierra.png",
+      "image": "../img/motosierra.png",
       "vendido": "0"
     },
     {
@@ -16,7 +16,7 @@
         "marca": "Makita",
         "precio": 13500,
         "descripcion": "Taladro Makita Profesional",
-        "image": "./img/taladro.png",
+        "image": "../img/taladro.png",
         "vendido": "0"
       },
       {

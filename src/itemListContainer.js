@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react"
 import ItemList from "./itemList"
 import ItemDetails from "./itemDetails"
+import { useParams } from "react-router-dom"
 
 const getProductos = () => {
     return new Promise((resolve, reject) => {
@@ -12,10 +13,23 @@ const getProductos = () => {
     })
 }
 
-const ItemListContainer = () => {
+const ItemListContainer = () => {  
+
+
 
     const [productos, setProductos] = useState([]);
-    const [selectedProducto, setSelectedProducto] = useState(null);
+    const [selectedProducto, setSelectedProducto] = useState(null)
+
+    const id = useParams()
+
+/*     useEffect(() => {
+        const promesa = new Promise ((res, rej) =>{
+            setTimeout(() => {
+                res(getProductos.filter(item => item.id === id))
+            }, 2000)
+        })
+    }) */
+
 
     useEffect(async () => {
         setProductos(await getProductos());

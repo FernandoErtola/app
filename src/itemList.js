@@ -1,4 +1,3 @@
-import ItemDetails from './itemDetails.js'
 import ItemCount from './itemCount.js'
 
 const ItemList = ({productos, onAddToCart, onItemSelect}) => {

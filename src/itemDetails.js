@@ -1,6 +1,6 @@
-import ItemCount from './itemCount.js'
+const ItemDetails = ({producto, onSelect}) => {
 
-const ItemDetails = ({producto, onItemSelect}) => {
+
     return (
         <>
             <h1>{producto.name}</h1>

@@ -3,10 +3,10 @@ import Header from "./header"
 import Footer from "./footer"
 import ItemCount from "./itemCount"
 import ItemListContainer from "./itemListContainer"
-import ItemDetailContainer from "./itemDetailContainer"
+import ItemDetails from "./itemDetails"
+import { BrowserRouter, Route, Switch } from "react-router-dom"
 import Carrito from "./carrito"
-import { useState } from "react"
-import { BrowserRouter, Switch, Route } from "react-router-dom"
+ import { useState } from "./itemDetailContainer"
 
 const App = () => {
 
@@ -15,16 +15,23 @@ const App = () => {
     }
 
     return(
+        <BrowserRouter>
         <>       
             <Header 
                 nombre="Fernando" 
                 apellido="Ertola" 
                 edad={35} 
             />
-            <ItemListContainer />
-            <ItemDetailContainer />
+
+        <Switch>
+            <Route path="/" component={ItemListContainer} exact/>        
+            <Route path="/productos/:id" component={ItemListContainer}/>
+            <Route path="/item/:id" component={ItemDetails}/>
+        </Switch>
+
             <Footer/>
         </>
+        </BrowserRouter>
     )
 }
 
