@@ -6,21 +6,9 @@ import ItemListContainer from "./itemListContainer"
 import ItemDetailContainer from "./itemDetailContainer"
 import Carrito from "./carrito"
 import { useState } from "react"
+import { BrowserRouter, Switch, Route } from "react-router-dom"
 
 const App = () => {
-
-/*     const [productos, setProductos] = useState([
-        {
-            id: '1',
-            name: 'Destornillador',
-            stock: 12
-        },
-        {
-            id: '2',
-            name: 'Martillo',
-            stock: 10
-        }
-    ]) */
 
     const onAdd = () => {        
         console.log('Producto agregado')

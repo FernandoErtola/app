@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react"
 import ItemList from "./itemList"
-import ItemDetails from "./itemDetail"
+import ItemDetails from "./itemDetails"
 
 const getProductos = () => {
     return new Promise((resolve, reject) => {

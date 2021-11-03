@@ -30,21 +30,18 @@ const ItemDetailContainer = () => {
         setSelectedProducto(producto);
     }
 
-    const ItemDetailList = ({producto}) => {
-            return <ItemCount key={producto.id} image={producto.image} name={producto.name} stock={producto.stock} initial={0} />  
-        }
-
     return (
         <>
-            <main className="idl">
-                <div>
-                    <div style={{width: '50%', float: 'left'}}>
-                        <ItemDetailList productos={productos}/>
-                    </div>
+            <main className="ilc">
                     <div style={{width: '50%', float: 'right'}}>
-                        {selectedProducto && <ItemDetail producto={selectedProducto} />}
+                        {productos.map(p =>
+                        <ItemDetail image={p.image}
+                        descripcion={p.descripcion}
+                        stock={p.stock}
+                        precio={p.precio}
+                        name={p.name} />
+                        )}
                     </div>
-                </div>
             </main>
         </>
     )
