@@ -6,7 +6,7 @@ import ItemListContainer from "./itemListContainer"
 import ItemDetails from "./itemDetails"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import Carrito from "./carrito"
- import { useState } from "./itemDetailContainer"
+ import ItemDetailContainer, { useState } from "./itemDetailContainer"
 
 const App = () => {
 
@@ -25,8 +25,8 @@ const App = () => {
 
         <Switch>
             <Route path="/" component={ItemListContainer} exact/>        
-            <Route path="/productos/:id" component={ItemListContainer}/>
-            <Route path="/item/:id" component={ItemDetails}/>
+            <Route path="/productos/destacados" component={ItemListContainer}/>
+            <Route path="/item/:id" component={ItemDetailContainer} exact/>
         </Switch>
 
             <Footer/>

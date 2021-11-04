@@ -6,6 +6,7 @@
       "precio": 45000,
       "descripcion": "Motosierra a nafta",
       "image": "../img/motosierra.png",
+      "star": 0,
       "vendido": "0"
     },
     {
@@ -15,6 +16,7 @@
         "precio": 13500,
         "descripcion": "Taladro Makita Profesional",
         "urlImagen": "../img/taladro.png",
+        "star": 1,
         "vendido": "0"
       },
       {
@@ -24,6 +26,7 @@
         "precio": 38000,
         "descripcion": "Sierra de banco circular",
         "urlImagen": "../img/sierraCircular.png",
+        "star": 1,
         "vendido": "0"
       },
       {
@@ -33,6 +36,7 @@
         "precio": 10500,
         "descripcion": "Lijadora uso hogareño B&D",
         "image": "../img/lijadora.png",
+        "star": 0,
         "vendido": "0"
       },
       {
@@ -41,7 +45,8 @@
         "marca": "Makita",
         "precio": 38000,
         "descripcion": "Sierra de banco circular",
-        "image": "assets/img/sierraCircular.png",
+        "image": "../img/sierraCircular.png",
+        "star": 1,
         "vendido": "0"
       },
       {
@@ -50,7 +55,8 @@
         "marca": "Black & Decker",
         "precio": 10500,
         "descripcion": "Lijadora uso hogareño B&D",
-        "image": "assets/img/lijadora.png",
+        "image": "../img/lijadora.png",
+        "star": 0,
         "vendido": "0"
       }
 ]

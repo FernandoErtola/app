@@ -1,5 +1,6 @@
-const ItemDetails = ({producto, onSelect}) => {
+import { useEffect } from "react";
 
+const ItemDetails = ({producto, onSelect}) => {
 
     return (
         <>

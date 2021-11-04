@@ -1,35 +1,40 @@
 import {useEffect, useState} from "react"
 import ItemList from "./itemList"
 import ItemDetails from "./itemDetails"
-import { useParams } from "react-router-dom"
+import { useParams, useHistory } from "react-router-dom"
 
-const getProductos = () => {
-    return new Promise((resolve, reject) => {
-        fetch('/api.json')
-        .then(res => res.json())
-        .then(data => {
-            setTimeout(() => {resolve(data)}, 2000)
-        })
-    })
-}
+const getProductosStar = (star) => {
+            return new Promise((resolve, reject) => {
+                fetch('/api.json')
+                .then(res => res.json())
+                .then(data => {
+                    const elemento = data.find(item => item.star === 1)
+                    setTimeout(() => {resolve(data)}, 2000)
+                })
+            })
+        }
+    
+    const getProductos = () => {
+            return new Promise((resolve, reject) => {
+                fetch('/api.json')
+                .then(res => res.json())
+                .then(data => {
+                    setTimeout(() => {resolve(data)}, 2000)
+                })
+            })
+        }
 
 const ItemListContainer = () => {  
 
-
+    const history = useHistory();
 
     const [productos, setProductos] = useState([]);
-    const [selectedProducto, setSelectedProducto] = useState(null)
+    const [productosStar, setProductosStar] = useState([]);
 
-    const id = useParams()
-
-/*     useEffect(() => {
-        const promesa = new Promise ((res, rej) =>{
-            setTimeout(() => {
-                res(getProductos.filter(item => item.id === id))
-            }, 2000)
-        })
-    }) */
-
+    const {star} = useParams()
+    useEffect(async () => {
+        setProductosStar(await getProductosStar(parseInt(star)));
+    }, []);
 
     useEffect(async () => {
         setProductos(await getProductos());
@@ -39,8 +44,12 @@ const ItemListContainer = () => {
         console.log(quantity, producto)
     }
 
-    const onItemSelected = (producto) => {
-        setSelectedProducto(producto);
+    const goToDetail = (producto) => {
+        history.push(`/item/${producto.id}`)
+    }
+
+   const goToStar = (id) => {
+        history.push(`/productos/${star.id}`)
     }
 
     return (
@@ -48,10 +57,7 @@ const ItemListContainer = () => {
             <main className="ilc">
                 <div>
                     <div style={{width: '50%', float: 'left'}}>
-                        <ItemList productos={productos} onAddToCart={onAgregarAlCarrito} onItemSelect={onItemSelected} />
-                    </div>
-                    <div style={{width: '50%', float: 'right'}}>
-                        {selectedProducto && <ItemDetails producto={selectedProducto} />}
+                        <ItemList productos={productos} onAddToCart={onAgregarAlCarrito} onItemSelect={goToDetail} />
                     </div>
                 </div>
             </main>

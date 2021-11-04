@@ -4,7 +4,8 @@ const ItemCount = ({ initial, name, stock, image, onAdd, onSelect }) => {
 
     const [count, setCount] = useState(initial)
 
-    const Suma = () => {
+    const Suma = (event) => {
+        event.stopPropagation();
         if (count < stock) {
             setCount(count + 1)
         } else {
@@ -12,7 +13,8 @@ const ItemCount = ({ initial, name, stock, image, onAdd, onSelect }) => {
         }
     }
 
-    const Resta = () => {
+    const Resta = (event) => {
+        event.stopPropagation();
         if (count > 0) {
             setCount(count - 1)
         }
@@ -28,7 +30,7 @@ const ItemCount = ({ initial, name, stock, image, onAdd, onSelect }) => {
                 <p className="cart-text">Cantidad: {count}</p>
                 <p className="cart-text">Stock: {stock}</p>
 
-                <button className="button" onClick={() => onAdd(count)}>Agregar al carrito</button>
+                <button className="button" onClick={(event) => {event.stopPropagation(); onAdd(count);}}>Agregar al carrito</button>
                 <button className="button" onClick={Suma}>+</button>
                 <button className="button" onClick={Resta}>-</button>
             </div>
