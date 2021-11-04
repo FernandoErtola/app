@@ -4,7 +4,7 @@
       "nombre": "Motosierra",
       "marca": "Stihl",
       "precio": 45000,
-      "descripcion": "Motosierra a nafta",
+      "descripcion": "Motosierra a Nafta",
       "image": "../img/motosierra.png",
       "star": false,
       "vendido": "0"
