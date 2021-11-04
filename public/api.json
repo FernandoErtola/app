@@ -1,62 +1,62 @@
 [
     {
       "id": 1,
-      "name": "Motosierra",
-      "stock": 10,
+      "nombre": "Motosierra",
       "marca": "Stihl",
       "precio": 45000,
       "descripcion": "Motosierra a nafta",
       "image": "../img/motosierra.png",
+      "star": false,
       "vendido": "0"
     },
     {
         "id": 2,
-        "name": "Taladro",
-        "stock": 10,
+        "nombre": "Taladro",
         "marca": "Makita",
         "precio": 13500,
         "descripcion": "Taladro Makita Profesional",
-        "image": "../img/taladro.png",
+        "urlImagen": "../img/taladro.png",
+        "star": true,
         "vendido": "0"
       },
       {
         "id": 3,
-        "name": "Sierra Circular",
-        "stock": 10,
+        "nombre": "Sierra Circular",
         "marca": "Makita",
         "precio": 38000,
         "descripcion": "Sierra de banco circular",
-        "image": "./img/sierraCircular.png",
+        "urlImagen": "../img/sierraCircular.png",
+        "star": true,
         "vendido": "0"
       },
       {
         "id": 4,
-        "name": "Lijadora",
-        "stock": 10,
+        "nombre": "Lijadora",
         "marca": "Black & Decker",
         "precio": 10500,
         "descripcion": "Lijadora uso hogareño B&D",
-          "image": "./img/lijadora.png",
+        "image": "../img/lijadora.png",
+        "star": false,
         "vendido": "0"
       },
       {
         "id": 5,
-        "name": "Sierra Circular",
-        "stock": 10,
+        "nombre": "Sierra Circular",
         "marca": "Makita",
         "precio": 38000,
         "descripcion": "Sierra de banco circular",
-          "image": "./img/sierraCircular.png",
+        "image": "../img/sierraCircular.png",
+        "star": true,
         "vendido": "0"
       },
       {
         "id": 6,
-        "name": "Lijadora",
-        "stock": 10,
+        "nombre": "Lijadora",
         "marca": "Black & Decker",
         "precio": 10500,
         "descripcion": "Lijadora uso hogareño B&D",
-          "image": "./img/lijadora.png",
+        "image": "../img/lijadora.png",
+        "star": false,
         "vendido": "0"
       }
 ]
