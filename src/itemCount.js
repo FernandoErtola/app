@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const ItemCount = ({ initial, name, stock, image, onAdd, onSelect }) => {
+const ItemCount = ({ initial, name, descripcion, precio, stock, image, onAdd, onSelect }) => {
 
     const [count, setCount] = useState(initial)
 
@@ -29,6 +29,8 @@ const ItemCount = ({ initial, name, stock, image, onAdd, onSelect }) => {
 
                 <p className="cart-text">Cantidad: {count}</p>
                 <p className="cart-text">Stock: {stock}</p>
+                <p className="cart-text">Precio: ${precio}</p>
+                <p className="cart-text">Descripcion: {descripcion}</p>
 
                 <button className="button" onClick={(event) => {event.stopPropagation(); onAdd(count);}}>Agregar al carrito</button>
                 <button className="button" onClick={Suma}>+</button>

@@ -6,7 +6,7 @@ import {useParams} from "react-router-dom"
 
 const getProducto = (idproducto) => {
     return new Promise((resolve, reject) => {
-        fetch('/api.json')
+        fetch('../api.json')
         .then(res => res.json())
         .then(data => {
             const elemento = data.find(item => item.id === idproducto)
