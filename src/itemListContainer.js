@@ -5,7 +5,7 @@ import { useParams, useHistory } from "react-router-dom"
     
 const getProductos = (category) => {
     return new Promise((resolve, reject) => {
-        fetch('api.json')
+        fetch('../api.json')
         .then(res => res.json())
         .then(data => {
             if(category == 'destacados'){

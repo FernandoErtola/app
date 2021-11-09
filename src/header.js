@@ -1,5 +1,6 @@
 import Navbar from "./navbar"
 import {Link} from 'react-router-dom'
+import { NavLink } from "react-router-dom"
 import { NavBar } from "react-router-dom"
 
 const Header = ({nombre, apellido, edad}) => {
@@ -11,23 +12,12 @@ const Header = ({nombre, apellido, edad}) => {
                 <h1>FERTOLA</h1>
             </Link>
             <Navbar/>
+            <NavLink to={'/carrito'} className="fas fa-shopping-cart cart navBar"></NavLink>
+
             <p className="welcome">Bienvenido <a className="user">{nombre} ({edad})</a></p>
-            <i className="fas fa-shopping-cart cart"></i>
+            
         </header>
     )
 }
 
 export default Header
-
-/* const Header = ({props}) => {
-
-    
-    return(
-        <header className="header">
-            <h1>FERTOLA</h1>
-            <Navbar/>
-            <p>Bienvenido {props.nombre}</p>
-        </header>
-    )
-} */
-

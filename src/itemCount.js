@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useHistory } from "react-router-dom"
 
 const ItemCount = ({ initial, name, descripcion, precio, stock, image, onAdd, onSelect }) => {
 
@@ -20,6 +21,14 @@ const ItemCount = ({ initial, name, descripcion, precio, stock, image, onAdd, on
         }
     }
 
+    const history = useHistory()
+
+    const routeChange = () =>{
+        let path = '/carrito'
+        history.push(path)
+
+    }
+
     return (
         <>
             <div className="cardCart" onClick={onSelect}>
@@ -32,7 +41,7 @@ const ItemCount = ({ initial, name, descripcion, precio, stock, image, onAdd, on
                 <p className="cart-text">Precio: ${precio}</p>
                 <p className="cart-text">Descripcion: {descripcion}</p>
 
-                <button className="button" onClick={(event) => {event.stopPropagation(); onAdd(count);}}>Agregar al carrito</button>
+                <button className="button" onClick={(event) => {event.stopPropagation(); onAdd(count); routeChange()}}>Agregar al carrito</button>
                 <button className="button" onClick={Suma}>+</button>
                 <button className="button" onClick={Resta}>-</button>
             </div>
