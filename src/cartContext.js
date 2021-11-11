@@ -1,24 +1,35 @@
-/* import { Children } from "react";
 import { createContext, useState } from "react";
 
-export const contexto = createContext ()
+export const CartContext = createContext();
 
-const { Provider } = contexto
-
-    const CustomComponent = ({children}) => {
-
+const CartProvider = ({ children }) => {
+    
     const [cart, setCart] = useState([])
 
-    const addToCart = (producto, Cantidad) => {
-        
+    const addToCart = (quantity, product) => {
+        const productExists = cart.find(item => item.product.id === product.id)
+        if (productExists) {
+            setCart(cart.map(item => item.product.id === product.id ? { product, quantity: item.quantity + quantity } : item))
+        } else {
+            setCart([...cart, { product, quantity }])
+        }
     }
 
-    return (
-        <Provider value={cart}>
-            {Children}
+    const removeFromCart = (id) => {
+        setCart(cart.filter(item => item.product.id !== id))
+    }
 
-        </Provider>
+    const clearCart = () => {
+        setCart([])
+    }
+
+    const value = {cart, addToCart, removeFromCart, clearCart}
+
+    return (
+        <CartContext.Provider value={value}>
+            {children}
+        </CartContext.Provider>
     )
 }
 
-export default CustomComponent */
+export default CartProvider

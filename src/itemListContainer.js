@@ -1,7 +1,8 @@
-import {useEffect, useState} from "react"
+import {useEffect, useState, useContext} from "react"
 import ItemList from "./itemList"
 import ItemDetails from "./itemDetails"
 import { useParams, useHistory } from "react-router-dom"
+import { CartContext } from "./cartContext"
     
 const getProductos = (category) => {
     return new Promise((resolve, reject) => {
@@ -20,6 +21,8 @@ const getProductos = (category) => {
 
 const ItemListContainer = () => {  
 
+    const { addToCart } = useContext(CartContext);
+
     const history = useHistory();
 
     const [productos, setProductos] = useState([]);
@@ -31,7 +34,7 @@ const ItemListContainer = () => {
     }, [category]);
 
     const onAgregarAlCarrito = (quantity, producto) => {
-        console.log(quantity, producto)
+        addToCart(quantity, producto);
     }
 
     const goToDetail = (producto) => {
