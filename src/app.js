@@ -33,7 +33,6 @@ const App = () => {
                         <Route path="/carrito" component={Carrito} exact />
                     </Switch>
 
-                    <Footer />
                 </CartProvider>
             </>
         </BrowserRouter>

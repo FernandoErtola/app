@@ -70,13 +70,20 @@ footer{
     padding-left: 10px;
 }
 
+.cartDetails{
+    display: flex;
+    position: fixed;
+    margin-right: 250px;
+}
+
 .button{
     padding: 0px 30px;
     margin: 0 10px;
     border-radius: 5px;
     font-size: 20px;
-    color: black;
+    color: white;
     background-color: blue;
+    text-decoration: none;
 }
 
 
@@ -85,3 +92,8 @@ footer{
     padding:20px;
 }
 
+.carrito{
+    display: flex;
+    position: relative;
+    justify-content: right;
+}

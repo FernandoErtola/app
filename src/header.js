@@ -1,8 +1,6 @@
 import { useContext } from "react"
 import Navbar from "./navbar"
-import {Link} from 'react-router-dom'
-import { NavLink } from "react-router-dom"
-import { NavBar } from "react-router-dom"
+import {Link, NavLink} from 'react-router-dom'
 import { CartContext } from "./cartContext"
 
 const Header = ({nombre, apellido, edad}) => {
