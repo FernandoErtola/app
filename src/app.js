@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom"
 import Carrito from "./carrito"
 import ItemDetailContainer, { useState } from "./itemDetailContainer"
 import CartProvider from "./cartContext"
+import firebase from "./firebase"
 
 const App = () => {
 
