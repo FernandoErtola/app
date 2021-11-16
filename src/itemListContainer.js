@@ -3,8 +3,10 @@ import ItemList from "./itemList"
 import ItemDetails from "./itemDetails"
 import { useParams, useHistory } from "react-router-dom"
 import { CartContext } from "./cartContext"
+import { db } from "./firebase"
     
-const getProductos = (category) => {
+const getProductos = async (category) => {
+    console.log(db)
     return new Promise((resolve, reject) => {
         fetch('../api.json')
         .then(res => res.json())

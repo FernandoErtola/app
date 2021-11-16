@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useHistory } from "react-router-dom"
 
-const ItemCount = ({ initial, name, descripcion, precio, stock, image, onAdd, onSelect }) => {
+const ItemCount = ({ initial, stock, onAdd, onSelect }) => {
 
     const [count, setCount] = useState(initial)
 
@@ -23,15 +23,9 @@ const ItemCount = ({ initial, name, descripcion, precio, stock, image, onAdd, on
 
     return (
         <>
-            <div className="cardCart" onClick={onSelect}>
-                <h5 className="cart-title">{name}</h5>
-
-                <img className="cart-image" src={image} alt="imagen" />
+            <div>
 
                 <p className="cart-text">Cantidad: {count}</p>
-                <p className="cart-text">Stock: {stock}</p>
-                <p className="cart-text">Precio: ${precio}</p>
-                <p className="cart-text">Descripcion: {descripcion}</p>
 
                 <button className="button" onClick={(event) => {event.stopPropagation(); onAdd(count);}}>Agregar al carrito</button>
                 <button className="button" onClick={Suma}>+</button>
