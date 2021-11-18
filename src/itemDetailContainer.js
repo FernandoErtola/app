@@ -3,16 +3,13 @@ import ItemDetails from "./itemDetails.js"
 import ItemCount from './itemCount.js'
 import {useParams, useHistory} from "react-router-dom"
 import { CartContext } from "./cartContext"
+import { db } from "./firebase"
+import { collection, getDocs, where, query } from "firebase/firestore"; 
 
-const getProducto = (idproducto) => {
-    return new Promise((resolve, reject) => {
-        fetch('../api.json')
-        .then(res => res.json())
-        .then(data => {
-            const elemento = data.find(item => item.id === idproducto)
-            setTimeout(() => {resolve(elemento)}, 2000)
-        })
-    })
+const getProducto = async (idproducto) => {
+    const q = query(collection(db, "productos"), where("id", "==", idproducto));
+    const querySnapshot = (await getDocs(q)).docs.map(doc => doc.data());
+    return querySnapshot[0];
 }
 
 const ItemDetailContainer = () => {

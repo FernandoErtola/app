@@ -4,21 +4,17 @@ import ItemDetails from "./itemDetails"
 import { useParams, useHistory } from "react-router-dom"
 import { CartContext } from "./cartContext"
 import { db } from "./firebase"
+import { collection, getDocs } from "firebase/firestore"; 
+
     
 const getProductos = async (category) => {
-    console.log(db)
-    return new Promise((resolve, reject) => {
-        fetch('../api.json')
-        .then(res => res.json())
-        .then(data => {
-            if(category == 'destacados'){
-                data = data.filter(item => item.star)
-            }else if(category == 'makita'){
-                data = data.filter(item => item.marca == 'Makita')
-            }
-            setTimeout(() => {resolve(data)}, 2000)
-        })
-    })
+    let data = (await getDocs(collection(db, "productos"))).docs.map(doc => doc.data());
+    if(category == 'destacados'){
+        data = data.filter(item => item.star)
+    }else if(category == 'makita'){
+        data = data.filter(item => item.marca == 'Makita')
+    }
+    return data;
 }
 
 const ItemListContainer = () => {  
