@@ -3,7 +3,7 @@ import { CartContext } from "./cartContext";
 import ItemDetails from "./itemDetails";
 import { Link } from 'react-router-dom';
 import {db} from './firebase'
-import { collection, getDocs, Timestamp } from "firebase/firestore"; 
+import { collection, getDoc, addDoc, doc, Timestamp } from "firebase/firestore"; 
 import FormUser from './usr';
 
 
@@ -12,7 +12,6 @@ const Carrito = () => {
     const { cart, removeFromCart, clearCart } = useContext(CartContext)
     const [orderId, setOrderId] = useState('')
     const [showForm, setShowForm] = useState(false)
-    const [confirmation, setConfirmation] = useState(false)
 
     const itemsCount = cart.reduce((acc, item) => acc + item.quantity, 0);
     const valorTotal = cart.reduce((acc, item) => acc + item.quantity * item.product.precio, 0);
@@ -21,30 +20,21 @@ const Carrito = () => {
         setShowForm(true)
     }
 
-        const createOrder = {
+    const createOrder = async (formUser) => {
+
+        const newOrder = {
             formUser,
             cart,
             total: valorTotal,
-            date: Timestamp.now(),
-        };
-        await setDoc(doc(db, "order", "idOrder"), createOrder);
-        
-        db.collection('orders').add(order)
-        .then(docRef => {
-            setOrderId(docRef.id)
-            setConfirmation(true)
-        })
-/*         orders.add(newOrder).then(({ id }) => {
-            setOrderId(id)
-            setConfirmation(true)
-        }) */
-        .catch(error => { console.log("No se pudo realizar la compra") })
-    };
+            date: Timestamp.fromDate(new Date())
+        }
 
+        const docRef = await addDoc(collection(db, 'order'), newOrder)
+        setOrderId(docRef.id)
+        clearCart()
+    }
 
-
-
-    if (db.lenght === 0 && orderId === '') {
+    if (itemsCount === 0 && !orderId) {
         return (
             <div className="container mt-5">
                 <h3>No hay productos en el carrito</h3>
@@ -55,7 +45,7 @@ const Carrito = () => {
         )
     }
 
-    else if (orderId && confirmation) {
+    else if (orderId) {
         return (
             <div className="container mt-5">
                 <h3>Compra realizada con éxito</h3>
@@ -103,14 +93,3 @@ const Carrito = () => {
 }
 
 export default Carrito;
-
-/*     const createOrder = (formUser) => {
-        const db = firestore();
-        const orders = db.collection('order');
-
-        const newOrder = {
-            formUser,
-            cart,
-            total: valorTotal,
-            date: Timestamp.fromDate(new Date())
-        } */

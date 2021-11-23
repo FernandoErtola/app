@@ -3,10 +3,10 @@ import {db} from './firebase'
 
 const FormUser = ({ createOrder }) => {
     const [form, setForm] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        address: ''
+        name: '12',
+        email: '12',
+        phone: '12',
+        address: '12'
     })
 
     const getContact = (e) => {
