@@ -18,7 +18,7 @@ Se trata de un Ecommerce de una ferreteria. El cliente podra agregar al carrito 
 
 
 ## Demostracion del funcionamiento del sitio
-[![Ver Video](/public/img/demo.mov)]
+![GIF](/public/img/demo.gif)
 ## Librerias y tecnologia utilizada
 
 HTML
