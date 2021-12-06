@@ -39,12 +39,15 @@ const ItemDetailContainer = () => {
     return (
         <>
             {producto && 
-                <main className="ilc">
-                        <div style={{width: '50%', float: 'right'}}>
+                <main className="container-fluid mt-3 d-flex justify-content-center">
+                        <div>
                             <ItemDetails producto={producto} />
                             <ItemCount key={producto.id} stock={producto.stock} onAdd={(quantity) => onAgregarAlCarrito(quantity, producto)} initial={1} />
-                            {itemsCount > 0 && <button className="button" onClick={goToCart}>Finalizar compra</button>}
+                            <div className="d-flex justify-content-end">
+                            {itemsCount > 0 && <button className="btn btn-success" onClick={goToCart}>Finalizar compra</button>}
                         </div>
+                        </div>
+                        
                 </main> 
             }
         </>

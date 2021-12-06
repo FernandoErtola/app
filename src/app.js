@@ -1,12 +1,9 @@
 
 import Header from "./header"
-import Footer from "./footer"
-import ItemCount from "./itemCount"
 import ItemListContainer from "./itemListContainer"
-import ItemDetails from "./itemDetails"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import Carrito from "./carrito"
-import ItemDetailContainer, { useState } from "./itemDetailContainer"
+import ItemDetailContainer from "./itemDetailContainer"
 import CartProvider from "./cartContext"
 
 const App = () => {
@@ -18,7 +15,6 @@ const App = () => {
     return (
 
         <BrowserRouter>
-            <>
                 <CartProvider>
                     <Header
                         nombre="Fernando"
@@ -34,7 +30,6 @@ const App = () => {
                     </Switch>
 
                 </CartProvider>
-            </>
         </BrowserRouter>
     )
 }

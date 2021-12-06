@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import {db} from './firebase'
 
 const FormUser = ({ createOrder }) => {
     const [form, setForm] = useState({
-        name: '12',
-        email: '12',
-        phone: '12',
-        address: '12'
+        name: '',
+        email: '',
+        phone: '',
+        address: ''
     })
 
     const getContact = (e) => {
@@ -30,26 +29,32 @@ const FormUser = ({ createOrder }) => {
     )
 
     return (
-        <div className="FormContacto">
+
+      <div className="FormContacto d-flex justify-content-center mt-5">
+        <div className="FormContacto-container">
             <h2>Datos de Contacto</h2>
             <form>
                 <div className="formContainer">
-                    <div className="formInput">
-                        <input type="text" name="name" placeholder="Nombre y Apellido" value={form.name} onChange={getContact} required/><strong>*</strong>
+                <div>
+                        <label className="form-label">Nombre y Apellido</label>
+                        <input type="text" className="form-control" name="name" placeholder="Juan Perez" value={form.name} onChange={getContact} required/>
                     </div>
                     <div className="formInput">
-                        <input type="email" name="email" placeholder="Email" value={form.email} onChange={getContact} required/><strong>*</strong>
+                        <label className="form-label mt-1">Email</label>
+                        <input type="email" className="form-control" name="email" placeholder="juan@perez.com" value={form.phone} onChange={getContact} required/>
                     </div>
                     <div className="formInput">
-                        <input type="text" name="phone" placeholder="Teléfono" value={form.phone} onChange={getContact} required/><strong>*</strong>
+                        <label className="form-label mt-1">Telefono</label>
+                        <input type="text" className="form-control" name="phone" placeholder="11-2345-6789" value={form.phone} onChange={getContact} required/>
                     </div>
                     <div className="formInput">
-                        <input type="text" name="address" placeholder="Dirección" value={form.address} onChange={getContact} required/><strong>*</strong>
+                        <label className="form-label mt-1">Direccion de entrega:</label>
+                        <input type="text" className="form-control" name="address" placeholder="Balcarce 50" value={form.address} onChange={getContact} required/>
                     </div>
                 </div>
             </form>
-            <h4>* Campos obligatorios</h4>
-            <button className="btn-primary" onClick={finishBuy} disabled={validateForm}>Finalizar Compra</button>
+            <button className="btn btn-primary mb-5 mt-2" onClick={finishBuy} disabled={validateForm}>Finalizar Compra</button>
+            </div>
         </div>
     )
 }

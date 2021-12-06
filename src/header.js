@@ -3,7 +3,7 @@ import Navbar from "./navbar"
 import {Link, NavLink} from 'react-router-dom'
 import { CartContext } from "./cartContext"
 
-const Header = ({nombre, apellido, edad}) => {
+const Header = ({nombre, edad}) => {
 
     const { cart } = useContext(CartContext);
     const itemsCount = cart.reduce((acc, item) => acc + item.quantity, 0);

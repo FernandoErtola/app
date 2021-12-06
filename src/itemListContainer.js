@@ -1,6 +1,5 @@
 import {useEffect, useState, useContext} from "react"
 import ItemList from "./itemList"
-import ItemDetails from "./itemDetails"
 import { useParams, useHistory } from "react-router-dom"
 import { CartContext } from "./cartContext"
 import { db } from "./firebase"
@@ -41,13 +40,11 @@ const ItemListContainer = () => {
 
     return (
         <>
-            <main className="ilc">
-                <div>
-                    <div style={{width: '50%', float: 'left'}}>
+        <div className="container-fluid mt-3">
+            <div className="row">
                         <ItemList productos={productos} onAddToCart={onAgregarAlCarrito} onItemSelect={goToDetail} />
+                        </div>
                     </div>
-                </div>
-            </main>
         </>
     )
 }

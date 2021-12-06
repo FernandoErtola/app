@@ -1,14 +1,14 @@
-import { useEffect } from "react";
 
-const ItemDetails = ({producto, onSelect}) => {
+const ItemDetails = ({producto}) => {
 
     return (
-        <>
-            <h1>{producto.name}</h1>
-            <p>Stock: {producto.stock}</p>    
-            <p>Descripcion: {producto.descripcion}</p>     
-            <p>Precio: ${producto.precio}</p>    
-            <img className="cart-image" src={producto.image} alt="imagen" />    
+        <>         
+                        <img className="img-thumbnail img" src={producto.image} alt="imagen" /> 
+                           <div className="ms-3">
+                                <h3 className="card-title">{producto.name}</h3>
+                                <p className="card-text">{producto.descripcion}</p>
+                                <h4 className="card-text">${producto.precio}</h4>
+                            </div>   
         </>
     )
     

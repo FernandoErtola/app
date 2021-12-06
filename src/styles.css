@@ -87,13 +87,28 @@ footer{
 }
 
 
-.cart-image{
-    width: 150px;
-    padding:20px;
-}
-
 .carrito{
     display: flex;
     position: relative;
     justify-content: right;
+}
+
+.img{
+    border: none;
+    padding: 10px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: 1.75em;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25
+rem
+;
 }
