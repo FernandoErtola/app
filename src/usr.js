@@ -41,7 +41,7 @@ const FormUser = ({ createOrder }) => {
                     </div>
                     <div className="formInput">
                         <label className="form-label mt-1">Email</label>
-                        <input type="email" className="form-control" name="email" placeholder="juan@perez.com" value={form.phone} onChange={getContact} required/>
+                        <input type="email" className="form-control" name="email" placeholder="juan@perez.com" value={form.email} onChange={getContact} required/>
                     </div>
                     <div className="formInput">
                         <label className="form-label mt-1">Telefono</label>
