@@ -21,11 +21,11 @@ Se trata de un Ecommerce de una ferreteria. El cliente podra agregar al carrito 
 ![GIF](/public/img/demo.gif)
 ## Librerias y tecnologia utilizada
 
-HTML
-CSS
-JavaScript
-React
-React-Router-Dom
-Firebase
-Bootstrap
-FontAwesome
+- HTML
+- CSS
+- JavaScript
+- React
+- React-Router-Dom
+- Firebase
+- Bootstrap
+- FontAwesome
